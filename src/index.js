@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {HashRouter} from 'react-router-dom';
 import './index.sass';
 import App from './App';
 import PatientsProvider from './context';
@@ -8,7 +9,9 @@ import reportWebVitals from './reportWebVitals';
 ReactDOM.render(
   <React.StrictMode>
     <PatientsProvider>
-      <App />
+      <HashRouter>
+        <App />
+      </HashRouter>
     </PatientsProvider>
   </React.StrictMode>,
   document.getElementById('root')
