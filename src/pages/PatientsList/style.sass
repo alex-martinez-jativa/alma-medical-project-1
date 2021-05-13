@@ -11,13 +11,16 @@
         padding: 1rem .5rem
     &__title
         font-weight: 200
-.create
+.add
     width: 100%
     text-align: center
     &__button
         @include button(1rem, 1px, $darkblue, 90%)
         margin-top: 1rem
         padding: 1rem
+        &:hover
+            background-color: $darkblue
+            color: white
 
 @media screen and ( min-width: 600px )
     .patients
@@ -30,14 +33,14 @@
             padding: 5rem 0
         &__title
             font-weight: 200
-    .create
+    .add
         width: 100%
         text-align: center
         &__button
             cursor: pointer
-            @include button(1.6rem, 2px, $darkblue, 50%)
+            @include button(1rem, 2px, $darkblue, 30%)
             margin-top: 1rem
-            padding: 1rem
+            // padding: 1rem
             &:hover
                 background-color: $darkblue
                 color: white

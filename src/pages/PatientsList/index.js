@@ -25,14 +25,14 @@ const PatientList = () => {
 
     return (
         <div className="patients">
-            <h1 className="patients__title">Patients List</h1>
+            <h1 className="patients__title">Patient List</h1>
             <div className="patients__box">
                 {state.patients.map((item) => {
                     return <PatientItem key={item.id} item={item} removePatient={handleRemovePatient}/>
                 })}
             </div>
-            <div className="create">
-                <Button styleClass="create__button" text="Create new patient" onClick={handleGoToCreatePatient}/>
+            <div className="add">
+                <Button styleClass="add__button" text="Create new patient" onClick={handleGoToCreatePatient}/>
             </div>
         </div>
     );
