@@ -1,0 +1,12 @@
+@mixin flexboxColumn()
+    display: flex
+    flex-direction: column
+    align-items: center
+
+@mixin button($fontsize, $borderPx, $borderColor, $width)
+    font-size: $fontsize
+    border: $borderPx solid $borderColor
+    background: transparent
+    border-radius: 20px
+    color: $borderColor
+    width: $width

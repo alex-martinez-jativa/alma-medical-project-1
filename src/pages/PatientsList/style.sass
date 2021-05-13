@@ -1,8 +1,43 @@
-@mixin flexCol()
-    display: flex
-    flex-direction: column
+@import '../../style-constants/_mixins'
+@import '../../style-constants/_colors'
 
 .patients
-    @include flexCol()
-    align-items: center
-    
+    @include flexboxColumn()
+    &__box
+        @include flexboxColumn()
+        justify-content: center
+        background-color: $darkblue
+        width: 100%
+        padding: 1rem 0
+    &__title
+        font-weight: 200
+.create
+    width: 100%
+    text-align: center
+    &__button
+        @include button(1rem, 1px, $darkblue, 100%)
+        margin-top: 1rem
+        padding: 1rem
+
+@media screen and ( min-width: 600px )
+    .patients
+        @include flexboxColumn()
+        &__box
+            @include flexboxColumn()
+            justify-content: center
+            background-color: $darkblue
+            width: 100%
+            padding: 5rem 0
+        &__title
+            font-weight: 200
+    .create
+        width: 100%
+        text-align: center
+        &__button
+            @include button(1.6rem, 2px, $darkblue, 50%)
+            cursor: pointer
+            margin-top: 1rem
+            padding: 1rem
+            &:hover
+                background-color: $darkblue
+                color: white
