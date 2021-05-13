@@ -8,7 +8,8 @@ const initialState = {
 const patientsReducer = (state = initialState, action) => {
     switch(action.type) {
         case GET_PATIENTS:
-            case ADD_PATIENT:
+            return state;
+        case ADD_PATIENT:
             return {
                 ...state,
                 patients: state.patients.concat(action.payload)
