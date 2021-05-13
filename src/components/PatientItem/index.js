@@ -37,7 +37,7 @@ const PatientItem = ({item, removePatient}) => {
                         </div>
                     </li>
                     
-                    <li className="item__value item__delete" onClick={() => removePatient(item.id)}>
+                    <li data-testid="remove-btn" className="item__value item__delete" onClick={() => removePatient(item.id)}>
                         <i className="far fa-trash-alt item__icon"></i>
                     </li>
                 </ul>
