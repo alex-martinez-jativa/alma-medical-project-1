@@ -1,6 +1,6 @@
 import React, {useContext, useEffect} from 'react';
 import {PatientsContext} from '../../context';
-import {getPatinetsAction} from '../../context/actions';
+import {getPatinetsAction, removePatientAction} from '../../context/actions';
 import PatientItem from '../../components/PatientItem';
 import './style.sass';
 
@@ -12,11 +12,15 @@ const PatientList = () => {
         patientsDispatch(getPatinetsAction())
     },[patientsDispatch])
 
+    const handleRemovePatient = (patientId) => {
+        patientsDispatch(removePatientAction(patientId))
+    }
+
     return (
         <div className="patients">
             <h1>Patients List</h1>
             {state.patients.map((item) => {
-                return <PatientItem item={item}/>
+                return <PatientItem item={item} removePatient={handleRemovePatient}/>
             })}
         </div>
     );
