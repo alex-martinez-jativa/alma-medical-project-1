@@ -6,9 +6,9 @@ const App = () => {
     
     return (
         <Switch>
-            <Route exact path="/" render={PatientsList}/>
-            <Route path="/patient-list" render={PatientsList} />
-            <Route path="/create-patient" render={CreatePatient} />
+            <Route exact path="/" render={() => <PatientsList /> }/>
+            <Route path="/patient-list" render={() => <PatientsList />} />
+            <Route path="/create-patient" render={() => <CreatePatient />} />
         </Switch>
     );
 }
