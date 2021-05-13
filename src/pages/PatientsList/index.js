@@ -1,12 +1,15 @@
 import React, {useContext, useEffect} from 'react';
+import {useHistory} from 'react-router-dom';
 import {PatientsContext} from '../../context';
 import {getPatinetsAction, removePatientAction} from '../../context/actions';
 import PatientItem from '../../components/PatientItem';
+import Button from '../../components/Button';
 import './style.sass';
 
 
 const PatientList = () => {
     const [state, patientsDispatch] = useContext(PatientsContext);
+    const history = useHistory();
 
     useEffect(() => {
         patientsDispatch(getPatinetsAction())
@@ -15,6 +18,10 @@ const PatientList = () => {
     const handleRemovePatient = (patientId) => {
         patientsDispatch(removePatientAction(patientId))
     }
+
+    const handleGoToCreatePatient = () => {
+        history.push('/create-patient');
+    }   
 
     return (
         <div className="patients">
@@ -25,7 +32,7 @@ const PatientList = () => {
                 })}
             </div>
             <div className="create">
-                <button className="create__button">Create new patient</button>
+                <Button styleClass="create__button" text="Create new patient" onClick={handleGoToCreatePatient}/>
             </div>
         </div>
     );
