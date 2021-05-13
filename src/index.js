@@ -2,11 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.sass';
 import App from './App';
+import PatientsProvider from './context';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <PatientsProvider>
+      <App />
+    </PatientsProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
