@@ -47,7 +47,7 @@ const CreatePatient = () => {
                 <input onChange={(e) => handleSetId(e)} className="form__input" type="text" name="id" placeholder="id..." />
                 <input onChange={(e) => setName(e.target.value.trim())} className="form__input" type="text" name="name" placeholder="name..." />
                 <input onChange={(e) => setSurname(e.target.value.trim())} className="form__input" type="text" name="surname" placeholder="surname..." />
-                <input onChange={(e) => setBirthdate(e.target.value.trim())} className="form__input" type="date" name="birthday" placeholder="dd/mm/aaaa" />
+                <input onChange={(e) => setBirthdate(e.target.value.trim())} className="form__input" type="date" name="birthday" />
             </div>
             {!handleDisableButton() && <Button 
                 text="Create" 

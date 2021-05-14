@@ -10,3 +10,22 @@
     border-radius: 20px
     color: $borderColor
     width: $width
+
+@mixin fadeInTransition($time) 
+    animation: fadeIn $time
+
+@mixin slideTransition($time)
+    transform: translateX(-100%)
+    animation: slide $time forwards
+
+@keyframes fadeIn 
+        0% 
+            opacity: 0
+        100% 
+            opacity: 1 
+    
+@keyframes slide 
+    100%  
+        transform: translateX(0%) 
+
+    
