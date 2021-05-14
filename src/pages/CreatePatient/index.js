@@ -1,6 +1,7 @@
 import {useState, useContext} from 'react';
 import {useHistory} from 'react-router-dom';
 import {PatientsContext} from '../../context';
+import {createPatientAction} from '../../context/actions';
 import Button from '../../components/Button';
 import Header from '../../components/Header';
 import {CREATE_ICON} from '../../icons';
@@ -12,26 +13,40 @@ const CreatePatient = () => {
     const history = useHistory();
 
     const handleCreatePatient = () => {
+        const patientValues = {
+            id,
+            name,
+            surname,
+            birthdate
+        }
+        patientsDispatch(createPatientAction(patientValues))
         history.push('/patient-list');
     };
 
-    const [idValue, setIdValue] = useState();
-    const [nameValue, setNameValue] = useState();
-    const [surnameValue, setSurnameValue] = useState();
-    const [birthValue, setBirthValue] = useState();
+    const [id, setId] = useState();
+    const [name, setName] = useState();
+    const [surname, setSurname] = useState();
+    const [birthdate, setBirthdate] = useState();
 
     const handleEmptyValue = (value) => value ? true : false;
 
-    const handleDisableButton = () => !idValue || !nameValue || !surnameValue || !birthValue;
+    const handleDisableButton = () => !id || !name || !surname || !birthdate;
+
+    const handleSetId = (e) => {
+        const matchIdValue = state.patients.filter((patient) => patient.id === e.target.value.trim());
+        if(matchIdValue.length < 1) {
+            setId(e.target.value.trim());
+        }
+    }
 
     return (
         <div className="create">
-            <Header title="Create new Patient" icon={CREATE_ICON} />
+            <Header title="Create Patient" icon={CREATE_ICON} />
             <div className="form">
-                <input onChange={(e) => setIdValue(e.target.value.trim())} className="form__input" type="text" name="id" placeholder="id..." />
-                <input onChange={(e) => setNameValue(e.target.value.trim())} className="form__input" type="text" name="name" placeholder="name..." />
-                <input onChange={(e) => setSurnameValue(e.target.value.trim())} className="form__input" type="text" name="surname" placeholder="surname..." />
-                <input onChange={(e) => setBirthValue(e.target.value.trim())} className="form__input" type="date" name="birthday" placeholder="dd/mm/aaaa" />
+                <input onChange={(e) => handleSetId(e)} className="form__input" type="text" name="id" placeholder="id..." />
+                <input onChange={(e) => setName(e.target.value.trim())} className="form__input" type="text" name="name" placeholder="name..." />
+                <input onChange={(e) => setSurname(e.target.value.trim())} className="form__input" type="text" name="surname" placeholder="surname..." />
+                <input onChange={(e) => setBirthdate(e.target.value.trim())} className="form__input" type="date" name="birthday" placeholder="dd/mm/aaaa" />
             </div>
             {!handleDisableButton() && <Button 
                 text="Create" 
@@ -40,10 +55,11 @@ const CreatePatient = () => {
             />}
             <div className="requirements">
                 <ul className="requirements__list">
-                    <li className={handleEmptyValue(idValue) && "requirements__list--filled"}>id cannot be empty</li>
-                    <li className={handleEmptyValue(nameValue) && "requirements__list--filled"}>name cannot be empty</li>
-                    <li className={handleEmptyValue(surnameValue) && "requirements__list--filled"}>surname cannot be empty</li>
-                    <li className={handleEmptyValue(birthValue) && "requirements__list--filled"}>birth date cannot be empty</li>
+                    <li className={handleEmptyValue(id) && "requirements__list--filled"}>id cannot be empty</li>
+                    <li className={handleEmptyValue(id) && "requirements__list--filled"}>id cannot be exist</li>
+                    <li className={handleEmptyValue(name) && "requirements__list--filled"}>name cannot be empty</li>
+                    <li className={handleEmptyValue(surname) && "requirements__list--filled"}>surname cannot be empty</li>
+                    <li className={handleEmptyValue(birthdate) && "requirements__list--filled"}>birth date cannot be empty</li>
                 </ul>
             </div>
         </div>
