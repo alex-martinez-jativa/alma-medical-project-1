@@ -41,14 +41,14 @@ const CreatePatient = () => {
     }
 
     return (
-        <div className="create">
+        <main className="create">
             <Header title="Create Patient" icon={CREATE_ICON} />
-            <div className="form">
+            <section className="form">
                 <input onChange={(e) => handleSetId(e)} className="form__input" type="text" name="id" placeholder="id..." />
                 <input onChange={(e) => setName(e.target.value.trim())} className="form__input" type="text" name="name" placeholder="name..." />
                 <input onChange={(e) => setSurname(e.target.value.trim())} className="form__input" type="text" name="surname" placeholder="surname..." />
                 <input onChange={(e) => setBirthdate(e.target.value.trim())} className="form__input" type="date" name="birthday" />
-            </div>
+            </section>
             {!handleDisableButton() && <Button 
                 text="Create" 
                 styleClass="create__button"
@@ -63,8 +63,10 @@ const CreatePatient = () => {
                     <li className={handleEmptyValue(birthdate) ? "requirements__list--filled" : undefined}>birth date cannot be empty</li>
                 </ul>
             </div>
-        </div>
+        </main>
     );
+
+    
 }
 
 export default CreatePatient;

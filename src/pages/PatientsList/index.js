@@ -29,18 +29,18 @@ const PatientList = () => {
 
 
     return (
-        <div className="patients">
+        <main className="patients">
             <Header title="Patient List" icon={LIST_ICON}/>
-            <div className="patients__box">
+            <section className="patients__box">
                 {state.patients.map((item) => {
                     return <PatientItem key={item.id} item={item} removePatient={handleRemovePatient}/>
                 })}
                 {!state.patients.length && <EmptyState text="No Patients" />}
-            </div>
+            </section>
             <div className="add">
                 <Button styleClass="add__button" text="Create new patient" onClick={handleGoToCreatePatient}/>
             </div>
-        </div>
+        </main>
     );
 }
 
