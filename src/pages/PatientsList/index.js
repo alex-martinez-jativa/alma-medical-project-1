@@ -7,6 +7,7 @@ import Button from '../../components/Button';
 import Header from '../../components/Header';
 import EmptyState from '../../components/EmptyState';
 import {LIST_ICON} from '../../icons';
+import {CREATE_PATIENT_PATH} from '../../constants';
 import './style.sass';
 
 
@@ -23,7 +24,7 @@ const PatientList = () => {
     }
 
     const handleGoToCreatePatient = () => {
-        history.push('/create-patient');
+        history.push(CREATE_PATIENT_PATH);
     } 
 
 

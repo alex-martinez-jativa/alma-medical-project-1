@@ -5,6 +5,7 @@ import {createPatientAction} from '../../context/actions';
 import Button from '../../components/Button';
 import Header from '../../components/Header';
 import {CREATE_ICON} from '../../icons';
+import {PATIENT_LIST_PATH} from '../../constants';
 import './style.sass';
 
 
@@ -20,7 +21,7 @@ const CreatePatient = () => {
             birthdate
         }
         patientsDispatch(createPatientAction(patientValues))
-        history.push('/patient-list');
+        history.push(PATIENT_LIST_PATH);
     };
 
     const [id, setId] = useState();
