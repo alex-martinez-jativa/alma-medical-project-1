@@ -55,11 +55,11 @@ const CreatePatient = () => {
             />}
             <div className="requirements">
                 <ul className="requirements__list">
-                    <li className={handleEmptyValue(id) && "requirements__list--filled"}>id cannot be empty</li>
-                    <li className={handleEmptyValue(id) && "requirements__list--filled"}>id cannot be exist</li>
-                    <li className={handleEmptyValue(name) && "requirements__list--filled"}>name cannot be empty</li>
-                    <li className={handleEmptyValue(surname) && "requirements__list--filled"}>surname cannot be empty</li>
-                    <li className={handleEmptyValue(birthdate) && "requirements__list--filled"}>birth date cannot be empty</li>
+                    <li className={handleEmptyValue(id) ? "requirements__list--filled" : undefined}>id cannot be empty</li>
+                    <li className={handleEmptyValue(id) ? "requirements__list--filled" : undefined}>id cannot be exist</li>
+                    <li className={handleEmptyValue(name) ? "requirements__list--filled" : undefined}>name cannot be empty</li>
+                    <li className={handleEmptyValue(surname) ? "requirements__list--filled" : undefined}>surname cannot be empty</li>
+                    <li className={handleEmptyValue(birthdate) ? "requirements__list--filled" : undefined}>birth date cannot be empty</li>
                 </ul>
             </div>
         </div>
