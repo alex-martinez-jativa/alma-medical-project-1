@@ -18,7 +18,7 @@ const initialState = {
     ]
 }
 
-const patientsReducer = (state = initialState, action) => {
+export const patientsReducer = (state = initialState, action) => {
     switch(action.type) {
         case GET_PATIENTS:
             return state;
