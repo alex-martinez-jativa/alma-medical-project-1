@@ -4,6 +4,8 @@ import {PatientsContext} from '../../context';
 import {getPatinetsAction, removePatientAction} from '../../context/actions';
 import PatientItem from '../../components/PatientItem';
 import Button from '../../components/Button';
+import Header from '../../components/Header';
+import {LIST_ICON} from '../../icons';
 import './style.sass';
 
 
@@ -21,11 +23,12 @@ const PatientList = () => {
 
     const handleGoToCreatePatient = () => {
         history.push('/create-patient');
-    }   
+    } 
+
 
     return (
         <div className="patients">
-            <h1 className="patients__title">Patient List</h1>
+            <Header title="Patient List" icon={LIST_ICON}/>
             <div className="patients__box">
                 {state.patients.map((item) => {
                     return <PatientItem key={item.id} item={item} removePatient={handleRemovePatient}/>

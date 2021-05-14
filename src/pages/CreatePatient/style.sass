@@ -26,6 +26,9 @@
         font-size: 1.2rem
         margin: .5rem 0
         border-radius: 20px
+        &:focus
+            outline: solid $deepblue
+        
 
 .link
     text-decoration: none
@@ -33,6 +36,13 @@
     font-size: 1.2rem
     color: $red
     cursor: pointer
+
+.requirements
+    margin-top: 1rem
+    &__list
+        color: $red
+    &__list--filled
+        color: gray
 
 @media screen and ( min-width: 700px )
     .create
@@ -42,3 +52,10 @@
         &__input
             width: 50%
 
+@media screen and ( min-width: 1280px )
+    .create
+        &__button
+           @include button(1rem, 2px, $darkblue, 20%) 
+    .form
+        &__input
+            width: 30%
