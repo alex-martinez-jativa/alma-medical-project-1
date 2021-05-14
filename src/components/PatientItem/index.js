@@ -32,7 +32,7 @@ const PatientItem = ({item, removePatient}) => {
                         <div className="item__value--title">
                             <b>Birthdate:</b>
                         </div> 
-                        <div>
+                        <div className="item__value--date">
                             {item.birthdate}
                         </div>
                     </li>
