@@ -5,19 +5,12 @@
     @include flexboxColumn()
     &__title
         font-weight: 200
-    &__button
-        @include button(1rem, 1px, $darkblue, 90%)
-        margin-top: 1rem
-        padding: 1rem
-        cursor: pointer
-        &:hover
-            background-color: $darkblue
-            color: white
 .form
     @include flexboxColumn()
     background-color: $darkblue
     padding: 2rem
     width: 100%
+    margin-bottom: 2rem
     @include fadeInTransition($time: 0.5s)
 
     &__input
@@ -47,17 +40,11 @@
         color: gray
 
 @media screen and ( min-width: 700px )
-    .create
-        &__button
-           @include button(1rem, 2px, $darkblue, 30%) 
     .form
         &__input
             width: 50%
 
-@media screen and ( min-width: 1280px )
-    .create
-        &__button
-           @include button(1rem, 2px, $darkblue, 20%) 
+@media screen and ( min-width: 1280px ) 
     .form
         &__input
             width: 30%

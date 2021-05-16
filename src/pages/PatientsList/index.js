@@ -38,7 +38,7 @@ const PatientList = () => {
                 {!state.patients.length && <EmptyState text="No Patients" />}
             </section>
             <div className="add">
-                <Button styleClass="add__button" text="Create new patient" onClick={handleGoToCreatePatient}/>
+                <Button text="Create new patient" onClick={handleGoToCreatePatient}/>
             </div>
         </main>
     );

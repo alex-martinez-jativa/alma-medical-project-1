@@ -51,7 +51,6 @@ const CreatePatient = () => {
             </section>
             {handleDisableButton() && <Button 
                 text="Create" 
-                styleClass="create__button"
                 onClick={handleCreatePatient} 
             />}
             <div className="requirements">
