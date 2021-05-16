@@ -44,15 +44,17 @@ const CreatePatient = () => {
         <main className="create">
             <Header title="Create Patient" icon={CREATE_ICON} />
             <section className="form">
-                <input onChange={(e) => handleSetId(e)} className="form__input" type="text" name="id" placeholder="id..." />
-                <input onChange={(e) => setName(e.target.value.trim())} className="form__input" type="text" name="name" placeholder="name..." />
-                <input onChange={(e) => setSurname(e.target.value.trim())} className="form__input" type="text" name="surname" placeholder="surname..." />
-                <input onChange={(e) => setBirthdate(e.target.value.trim())} className="form__input" type="date" name="birthday" />
+                <input onChange={(e) => handleSetId(e)} className="form__input" type="text" name="id" placeholder="id..." data-testid="id-input"/>
+                <input onChange={(e) => setName(e.target.value.trim())} className="form__input" type="text" name="name" placeholder="name..." data-testid="name-input"/>
+                <input onChange={(e) => setSurname(e.target.value.trim())} className="form__input" type="text" name="surname" placeholder="surname..." data-testid="surname-input" />
+                <input onChange={(e) => setBirthdate(e.target.value.trim())} className="form__input" type="date" name="birthday" data-testid="birth-input"/>
             </section>
-            {handleDisableButton() && <Button 
+            
+            <Button 
                 text="Create" 
                 onClick={handleCreatePatient} 
-            />}
+                disable={!handleDisableButton()}
+            />
             <div className="requirements">
                 <ul className="requirements__list">
                     <li className={handleEmptyValue(id) ? "requirements__list--filled" : undefined}>id cannot be empty</li>
