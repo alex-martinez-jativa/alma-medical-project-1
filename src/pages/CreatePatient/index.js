@@ -31,7 +31,7 @@ const CreatePatient = () => {
 
     const handleEmptyValue = (value) => value ? true : false;
 
-    const handleDisableButton = () => !id || !name || !surname || !birthdate;
+    const handleDisableButton = () => id && name && surname && birthdate;
 
     const handleSetId = (e) => {
         const matchIdValue = state.patients.filter((patient) => patient.id === e.target.value.trim());
@@ -49,7 +49,7 @@ const CreatePatient = () => {
                 <input onChange={(e) => setSurname(e.target.value.trim())} className="form__input" type="text" name="surname" placeholder="surname..." />
                 <input onChange={(e) => setBirthdate(e.target.value.trim())} className="form__input" type="date" name="birthday" />
             </section>
-            {!handleDisableButton() && <Button 
+            {handleDisableButton() && <Button 
                 text="Create" 
                 styleClass="create__button"
                 onClick={handleCreatePatient} 
