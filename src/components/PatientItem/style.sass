@@ -1,24 +1,18 @@
 @import '../../style-constants/_colors'
 @import '../../style-constants/_mixins'
 
-.item
-    display: flex
-    background-color: $lightblue
-    border-radius: 20px
-    margin: 0.5rem 0
-    width: 100%
-    justify-content: center
-    min-height: 5rem
-    
+
+.list
     @include slideTransition($time: 0.5s)
-    
-    &__list
-        display: flex
-        list-style: none
-        margin: 0
-        padding: 0.5rem
-        width: 100%
-        justify-content: space-around
+    background-color: $lightblue
+    display: flex
+    list-style: none
+    margin: 0.5rem 0
+    padding: 0.5rem
+    justify-content: space-around
+    border-radius: 10px
+    width: 90%
+    min-height: 3rem
     &__value
         margin: 0 0.5rem
         display: flex
@@ -37,13 +31,13 @@
         font-size: 0.8rem
 
 @media screen and ( min-width: 600px )
-    .item
+    .list
         width: 80%    
     
 @media screen and (min-width: 900px) 
-    .item
+    .list
         width: 80%
-        height: 5rem
+        min-height: 5rem
         align-items: center
         &__value
             font-size: 1.2rem
