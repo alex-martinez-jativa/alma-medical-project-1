@@ -1,6 +1,6 @@
 import './style.sass';
 
-const Button = ({text, onClick, styleClass}) => {
+const Button = ({text, onClick}) => {
     return <button onClick={onClick} className="button" /* className={styleClass} */>{text}</button>
 }
 
