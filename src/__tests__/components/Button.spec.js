@@ -5,13 +5,13 @@ import Button from '../../components/Button';
 describe('<Button />', () => {
     const mockText = 'buttonText';
     const mockOnClick = jest.fn();
-    const mockStyle = 'buttonStyle';
+
 
     it('render correctly', () => {
-        render(<Button text={mockText} onClick={mockOnClick} styleClass={mockStyle} />)
+        render(<Button text={mockText} onClick={mockOnClick} />)
     })
     it('render with text', () => {
-        render(<Button text={mockText} onClick={mockOnClick} styleClass={mockStyle} />)
+        render(<Button text={mockText} onClick={mockOnClick} />)
         
         const text = screen.getByText(mockText);
 
@@ -19,7 +19,7 @@ describe('<Button />', () => {
         expect(text.textContent).toEqual(mockText);
     })
     it('on click event', () => {
-        render(<Button text={mockText} onClick={mockOnClick} styleClass={mockStyle} />)
+        render(<Button text={mockText} onClick={mockOnClick} />)
         
         const button = screen.getByRole('button');
 
