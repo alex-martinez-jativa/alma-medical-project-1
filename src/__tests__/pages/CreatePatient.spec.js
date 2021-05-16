@@ -1,7 +1,6 @@
 import {render, screen} from '@testing-library/react';
 import CreatePatient from '../../pages/CreatePatient';
 import {PatientsContext} from '../../context';
-import userEvent from '@testing-library/user-event';
 
 const initialState = {
     patients: [
